@@ -9,9 +9,10 @@ sp500_return<-dailyReturn(sp500,type='log')
 df<-data.frame(tesla=tesla_return,sp500=sp500_return)
 df<-df[-1,]
 colnames(df)<-c('tesla','sp500')
-
+#Saving data frame
 dir.create("data", showWarnings = FALSE)
 saveRDS(df, "data/tesla_sp500.rds")
+write.csv(df, file = "data/tesla_sp500.csv")
 
 beta<-lm(tesla~sp500,data=df)
 print(summary(beta))
