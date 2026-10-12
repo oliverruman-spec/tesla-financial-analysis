@@ -33,5 +33,5 @@ print(summary(slope))
 dff<-data.frame(date=df_dates,beta=slope)
 dff<-na.omit(dff)
 
-rbeta<-ggplot(dff,aes(x=date,y=beta))+geom_hline(yintercept=1,linetype='dotted',col='grey7',linewidth=1)+theme_minimal()+geom_line(color='blue')+labs(title='120-day rolling beta: Tesla vs S&P 500',x='Date',y='Beta',caption='Source: Yahoo Finance via quantmod, 2023-2025. Window: 120 trading days (windows overlap).\n Dashed red: overall beta (2.305). Dotted grey: beta = 1 (market).')+geom_hline(yintercept=2.305,col='red',linetype='dashed')
+rbeta<-ggplot(dff,aes(x=date,y=beta))+geom_hline(yintercept=1,linetype='dotted',col='grey50',linewidth=1)+theme_minimal()+geom_line(color='blue')+labs(title='120-day rolling beta: Tesla vs S&P 500',x='Date',y='Beta',caption='Source: Yahoo Finance via quantmod, 2023-2025. Window: 120 trading days (windows overlap).\n Dashed red: overall beta (2.305). Dotted grey: beta = 1 (market).')+geom_hline(yintercept=2.305,col='red',linetype='dashed')
 ggsave('rolling_beta_tesla.png', plot = rbeta,width = 7, height = 5, dpi = 300)
