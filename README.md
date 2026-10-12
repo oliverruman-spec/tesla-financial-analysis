@@ -36,6 +36,7 @@ The dashed grey line has a slope of 1 (the market). The red line is the estimate
 
 Tesla amplifies market movements: when the S&P 500 moves by 1%, Tesla moves by about 2.3% on average. However, the market explains only about one third of Tesla's daily variation, so most of its movement is specific to the company.
 
+
 # Rolling beta
 
 The beta in the previous section is a single number for the whole period. To see whether it is stable over time, I estimated it again in a moving window of 120 trading days (about six months). For each day, the regression of Tesla returns on S&P 500 returns uses only the previous 120 days. The window then moves forward by one day.
