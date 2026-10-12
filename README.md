@@ -35,3 +35,20 @@ The dashed grey line has a slope of 1 (the market). The red line is the estimate
 ## Conclusion
 
 Tesla amplifies market movements: when the S&P 500 moves by 1%, Tesla moves by about 2.3% on average. However, the market explains only about one third of Tesla's daily variation, so most of its movement is specific to the company.
+
+## Rolling beta
+
+The beta in the previous section is a single number for the whole period. To see whether it is stable over time, I estimated it again in a moving window of 120 trading days (about six months). For each day, the regression of Tesla returns on S&P 500 returns uses only the previous 120 days. The window then moves forward by one day.
+
+- Window: 120 trading days
+- Number of estimates: 632 (the first 119 days have no value because the first window needs 120 observations)
+- First value: 27 June 2023 (beta 2.12)
+- Minimum: 1.34, maximum: 3.13, median: 2.34
+
+![120-day rolling beta of Tesla vs S&P 500](rolling_beta_tesla.png)
+
+The dashed red line is the overall beta (2.305). The dotted line is beta = 1, which is a stock that moves one-for-one with the market.
+
+The rolling beta changes a lot over time. It is close to the overall value in the second half of 2023, falls to its lowest level in 2024, and rises above 3 in early 2025. It never falls below 1, so Tesla was more sensitive to the market than the index itself in every window. This shows that a single beta for the whole period hides large changes in how Tesla reacts to the market.
+
+Two limitations should be kept in mind. Neighbouring windows overlap, so neighbouring points are not independent and the line looks smoother than the real uncertainty. Sudden jumps can also be caused by one extreme day entering or leaving the window, not by a real change in behaviour.
