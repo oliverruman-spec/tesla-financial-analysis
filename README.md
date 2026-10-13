@@ -50,9 +50,9 @@ The beta in the previous section is a single number for the whole period. To see
 
 The dashed red line is the overall beta (2.305). The dotted line is beta = 1, which is a stock that moves one-for-one with the market.
 
-The rolling beta changes a lot over time. It is close to the overall value in the second half of 2023, falls to its lowest level in 2024, and rises above 3 in early 2025. It never falls below 1, so Tesla was more sensitive to the market than the index itself in every window. This shows that a single beta for the whole period hides large changes in how Tesla reacts to the market.
+The rolling beta changes a lot over time. It is close to the overall value in the second half of 2023, falls to its lowest level in 2024, and rises above 3 in early 2025. It never falls below 1, suggesting that Tesla was more sensitive to market movements than the S&P 500 in every rolling window. This illustrates how a single beta estimate for the entire period can conceal substantial changes in Tesla's market sensitivity.
 
-Two limitations should be kept in mind. Neighbouring windows overlap, so neighbouring points are not independent and the line looks smoother than the real uncertainty. Sudden jumps can also be caused by one extreme day entering or leaving the window, not by a real change in behaviour.
+Two limitations should be considered. First, neighbouring windows overlap, meaning that consecutive beta estimates are not independent. This overlap can make the rolling beta series appear smoother than the underlying changes in the estimates might suggest. Second, sudden jumps can occur when an extreme daily observation enters or leaves the rolling window, such jumps do not necessarily indicate a genuine change in Tesla's underlying market sensitivity.
 
 ## Residual diagnostics
 
