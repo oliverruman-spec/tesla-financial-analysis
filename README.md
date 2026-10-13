@@ -34,7 +34,7 @@ The dashed grey line has a slope of 1 (the market). The red line is the estimate
 
 ## Conclusion
 
-Tesla amplifies market movements: when the S&P 500 moves by 1%, Tesla moves by about 2.3% on average. However, the market explains only about one third of Tesla's daily variation, so most of its movement is specific to the company.
+Tesla amplifies market movements: when the S&P 500 moves by 1%, Tesla moves by about 2.3% on average. However, the market explains only about one third of Tesla's daily return variation, the remaining two thirds are unexplained by the model and are largely driven by company-specific factors.
 
 
 # Rolling beta
