@@ -53,3 +53,22 @@ The dashed red line is the overall beta (2.305). The dotted line is beta = 1, wh
 The rolling beta changes a lot over time. It is close to the overall value in the second half of 2023, falls to its lowest level in 2024, and rises above 3 in early 2025. It never falls below 1, so Tesla was more sensitive to the market than the index itself in every window. This shows that a single beta for the whole period hides large changes in how Tesla reacts to the market.
 
 Two limitations should be kept in mind. Neighbouring windows overlap, so neighbouring points are not independent and the line looks smoother than the real uncertainty. Sudden jumps can also be caused by one extreme day entering or leaving the window, not by a real change in behaviour.
+
+## Residual diagnostics
+
+The regression results above rely on assumptions about the residuals (the part of Tesla's return that the market does not explain). I checked them with two plots, two statistical tests and a robust inference check. The code is in `diagnostics.R`, which reads `data/tesla_sp500.rds`.
+
+![Residuals over time: Tesla vs S&P 500](residuals_time.png)
+
+The residuals are scattered around zero with no visible trend. Some days are far from zero (the largest is about +0.19), which are days when company-specific events moved Tesla much more than the market.
+
+- Breusch-Pagan test (constant variance): BP = 0.10, p = 0.75
+- Durbin-Watson test (autocorrelation): DW = 1.92, p = 0.13
+- Robust (HC3) standard error of beta: 0.117, compared with the classical 0.118
+
+The Breusch-Pagan test finds no evidence of heteroskedasticity, and the Durbin-Watson test finds no evidence of positive first-order autocorrelation. The robust standard error is almost identical to the classical one, so the confidence interval is practically unchanged and the conclusion does not depend on the constant-variance assumption. Note that a test that does not reject an assumption does not prove it. It only means that the data show no evidence against it.
+
+![Normal QQ plot of residuals: Tesla vs S&P 500](residuals_qqplot.png)
+
+The QQ plot shows that the residuals follow the normal distribution well in the centre, but both tails are heavier than normal. The beta estimate is not affected by this, but confidence intervals based on normality are only approximate. With 751 observations and almost identical robust standard errors, the conclusion that beta is clearly above 1 holds.
+
