@@ -10,7 +10,7 @@ The first part of the project estimates the beta of Tesla (TSLA) relative to the
 - The first observation was removed because a return is not defined for it
 - Data files (in data folder): `data/tesla_sp500.csv` and `data/tesla_sp500.rds`
 
-The first column of the CSV file contains the date. The other two columns are the daily log returns of Tesla and the S&P 500.
+The CSV file contains the date, daily log returns of Tesla and daily log returns of S&P 500 in this order.
 
 ## Method
 
