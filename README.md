@@ -54,7 +54,7 @@ The rolling beta changes a lot over time. It is close to the overall value in th
 
 Two limitations should be considered. First, neighbouring windows overlap, meaning that consecutive beta estimates are not independent. This overlap can make the rolling beta series appear smoother than the underlying changes in the estimates might suggest. Second, sudden jumps can occur when an extreme daily observation enters or leaves the rolling window, such jumps do not necessarily indicate a genuine change in Tesla's underlying market sensitivity.
 
-## Residual diagnostics
+# Residual diagnostics
 
 The regression results above rely on assumptions about the residuals (the part of Tesla's return that the market does not explain). I checked them with two plots, two statistical tests and a robust inference check. The code is in `diagnostics.R`, which reads `data/tesla_sp500.rds`.
 
