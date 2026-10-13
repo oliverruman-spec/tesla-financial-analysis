@@ -15,6 +15,7 @@ colnames(df)<-c('tesla','sp500')
 
 beta<-lm(tesla~sp500,data=df)
 print(summary(beta))
+print(confint(beta,level=0.95))
 
 #graphs of daily log returns
 library(ggplot2)
